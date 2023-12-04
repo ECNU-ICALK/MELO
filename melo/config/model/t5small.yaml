@@ -1,0 +1,18 @@
+name: google/t5-small-ssm-nq
+class_name: AutoModelForSeq2SeqLM
+tokenizer_class: AutoTokenizer
+tokenizer_name: google/t5-small-ssm-nq
+fan_in_fan_out: False
+target_modules:
+  - encoder.block.5.layer.1.DenseReluDense.wi
+  - encoder.block.5.layer.1.DenseReluDense.wo
+  - decoder.block.5.layer.2.DenseReluDense.wi
+  - decoder.block.5.layer.2.DenseReluDense.wo
+  - encoder.block.6.layer.1.DenseReluDense.wi
+  - encoder.block.6.layer.1.DenseReluDense.wo
+  - decoder.block.6.layer.2.DenseReluDense.wi
+  - decoder.block.6.layer.2.DenseReluDense.wo
+
+pt: null
+
+grace_layer: encoder.block.4.layer.1.DenseReluDense.wo

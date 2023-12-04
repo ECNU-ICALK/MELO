@@ -1,0 +1,23 @@
+# @package _global_
+
+alg: lora
+lr: 1e-4
+train_base: False
+lr_lr: 1e-4
+lora:
+  cls_name: distilbert-base-cased
+  cls_class: AutoModel
+  supervised: true
+  cos: false
+  freeze: null
+  square: true
+  bound_embeds: false
+  use_all_negatives: false
+  freeze_lora: false
+  dist_heads: 1
+  cross_attend: false
+  soft_weighting: false
+  checkpoint_grad: false
+  lora_r: 64
+  lora_alpha: 64
+  lora_dropout: 0.0

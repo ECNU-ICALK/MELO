@@ -1,0 +1,12 @@
+.git
+.idea
+data
+scr
+__pycache__
+scr
+outputs
+checkpoint
+.json
+plotres
+logs
+mnist

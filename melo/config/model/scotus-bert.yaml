@@ -1,0 +1,12 @@
+name: tomh/scotus-bert
+class_name: AutoModelForSequenceClassification
+tokenizer_class: AutoTokenizer
+tokenizer_name: bert-base-cased
+fan_in_fan_out: False
+target_modules:
+  - bert.encoder.layer.9.output.dense
+  - bert.encoder.layer.10.output.dense
+  - bert.encoder.layer.11.output.dense
+grace_layer: bert.encoder.layer.4.output.dense
+
+pt: null

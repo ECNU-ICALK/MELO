@@ -1,0 +1,29 @@
+name: google/t5-large-ssm-nq
+class_name: AutoModelForSeq2SeqLM
+tokenizer_class: AutoTokenizer
+tokenizer_name: google/t5-large-ssm-nq
+fan_in_fan_out: False
+inner_params:
+- encoder.block.22.layer.1.DenseReluDense.wi.weight
+- encoder.block.22.layer.1.DenseReluDense.wo.weight
+- encoder.block.23.layer.1.DenseReluDense.wi.weight
+- encoder.block.23.layer.1.DenseReluDense.wo.weight
+- decoder.block.22.layer.2.DenseReluDense.wi.weight
+- decoder.block.22.layer.2.DenseReluDense.wo.weight
+- decoder.block.23.layer.2.DenseReluDense.wi.weight
+- decoder.block.23.layer.2.DenseReluDense.wo.weight
+
+
+target_modules:
+  - encoder.block.22.layer.1.DenseReluDense.wi
+  - encoder.block.22.layer.1.DenseReluDense.wo
+  - encoder.block.23.layer.1.DenseReluDense.wi
+  - encoder.block.23.layer.1.DenseReluDense.wo
+  - decoder.block.22.layer.2.DenseReluDense.wi
+  - decoder.block.22.layer.2.DenseReluDense.wo
+  - decoder.block.23.layer.2.DenseReluDense.wi
+  - decoder.block.23.layer.2.DenseReluDense.wo
+
+grace_layer: encoder.block.12.layer.1.DenseReluDense.wo
+#alg.model.base_model.model.encoder.block[4].layer[1].DenseReluDense.wo
+#self.model.model.encoder.block[22].layer[1].DenseReluDense.wo.lora_B['default'][4:8]
