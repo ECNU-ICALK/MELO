@@ -1,9 +1,10 @@
 <!-- omit in toc -->
-# MELO: Model Editing with Dynamic LoRA
+# MELO: Enhancing Model Editing with Neuron-Indexd Dynamic LoRA
 This repo contains the source code of our proposed MELO, a plug-in model editing method, which routes models' behavoir by dynamically indexing LoRA blocks according to a inner vector databse. Seamlessly integrated in [PEFT](https://github.com/huggingface/peft), MELO supports multiple LLMs such as BERT, T5 and GPT. 
 
 <!-- omit in toc -->
 ## Updates
+- **2023/12/09:** <strong> Our work has been accepted by AAAI 2024</strong> :fire::fire: 
 - **2023/7/16:** Experiments with multiple LLMs on different editing tasks. :art:
 - **2023/6/24:** Inner vector databse that builds accurate editing scope. :confetti_ball:	
 - **2023/6/08:** Support dynamic LoRA block Loding. :star:
