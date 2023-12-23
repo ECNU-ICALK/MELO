@@ -11,12 +11,24 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 
 <!-- omit in toc -->
 ## Table of Contents
+- [Reference](#Reference)
 - [Introduction](#introduction)
 - [Experiments](#experiments)
 - [Prepare Environments](#prepare-environments)
 - [Prepare Datasets](#prepare-datasets)
 - [Quick Start](#quick-start)
 - [Acknowledgments](#Acknowledgments)
+
+## Reference
+We would appreciate if you could refer to our work as one of your baselines!
+```
+@article{yu2023melo,
+  title={MELO: Enhancing Model Editing with Neuron-Indexed Dynamic LoRA},
+  author={Yu, Lang and Chen, Qin and Zhou, Jie and He, Liang},
+  journal={arXiv preprint arXiv:2312.11795},
+  year={2023}
+}
+```
 ## Introduction
 Due to the limitation of catastrophic forgetting and the lack of locality, few studies explore recent advanced Low-rank Adapter (LoRA) techniques for continual model editing. To overcome these limitations and take advantage of LoRA's resource efficiency, we propose MELO, a plug-in model editing method implemented with dynamic LoRA, which routes the behavior of language models by dynamically indexing LoRA blocks according to an inner vector database. MELO considers all editing properties and can be easily integrated into multiple LLMs such as BERT, T5 and GPT. Experimental results show that our proposed MELO achieves state-of-the-art editing performance on three sequential editing tasks (document classification, question answering and hallucination correction), while requires the least trainable parameters and computational cost.
 ![main](./figures/main_00.png)
