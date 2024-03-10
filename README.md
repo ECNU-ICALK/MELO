@@ -18,6 +18,7 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 - [Prepare Environments](#prepare-environments)
 - [Prepare Datasets](#prepare-datasets)
 - [Quick Start](#quick-start)
+- [Important Tips](#Important Tips)
 - [Acknowledgments](#Acknowledgments)
 
 ## Reference
@@ -74,7 +75,16 @@ python run.py +alg=lora +experiment=scotus +model=scotus-bert
 cd melo
 python run.py +alg=lora +experiment=qa +model=t5small
 ```
+## Important Tips
+* The GPT2-XL model we use is fine-tuned in line with the work [GRACE](https://github.com/Thartvigsen/GRACE/blob/728a52ebcd328ddca0bb1ec975e79625eabfab2a/grace/main.py#L83). Please download the checkpoint with the Google Drive link, and place the files under `melo/scr/models--gpt2-xl`
+    
+    
+* Some [logs](https://drive.google.com/drive/folders/1UhlY1W8MUmvsxqIXlRFBfxuTXEQG8FJP?usp=sharing) recording the correct training and inference processes are released for checking hyper-parameters.
 
+* The settings for scheduler vary on different tasks:
+  ```
+  123
+  ```
 
 ## Acknowledgments
 We would like to thank the following individuals and organizations for their contributions to this project:
