@@ -4,6 +4,7 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 
 <!-- omit in toc -->
 ## Updates
+- **2024/03/10:** Add some Important Tips for deployment. 🪂
 - **2023/12/19:** Repo has been transferred to [ECNU-ICALK/MELO](https://github.com/ECNU-ICALK/MELO) (Organization Account) 🔔
 - **2023/12/09:** <strong> Our work has been accepted by AAAI 2024</strong> :fire::fire: 
 - **2023/7/16:** Experiments with multiple LLMs on different editing tasks. :art:
@@ -12,14 +13,14 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 
 <!-- omit in toc -->
 ## Table of Contents
-- [Reference](#Reference)
+- [Reference](#reference)
 - [Introduction](#introduction)
 - [Experiments](#experiments)
 - [Prepare Environments](#prepare-environments)
 - [Prepare Datasets](#prepare-datasets)
 - [Quick Start](#quick-start)
-- [Important Tips](#Important Tips)
-- [Acknowledgments](#Acknowledgments)
+- [Important Tips](#important-tips)
+- [Acknowledgments](#acknowledgments)
 
 ## Reference
 We would appreciate if you could refer to our work as one of your baselines!
@@ -81,7 +82,7 @@ python run.py +alg=lora +experiment=qa +model=t5small
     
 * Some [logs](https://drive.google.com/drive/folders/1UhlY1W8MUmvsxqIXlRFBfxuTXEQG8FJP?usp=sharing) recording the correct training and inference processes are released for checking hyper-parameters.
 
-* The settings for scheduler vary on different tasks:
+* The settings of [torch.optim.lr_scheduler](https://github.com/BruthYU/MELO/blob/51c8322cc06faa2b7665c2d90236f1bd1b8d9575/melo/algs/lora.py#L135) vary on different tasks:
   ```
   123
   ```
