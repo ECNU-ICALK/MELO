@@ -4,6 +4,7 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 
 <!-- omit in toc -->
 ## Updates
+- **2024/03/10:** Add some Important Tips for deployment 🪂
 - **2023/12/09:** <strong> Our work has been accepted by AAAI 2024</strong> :fire::fire: 
 - **2023/7/16:** Experiments with multiple LLMs on different editing tasks. :art:
 - **2023/6/24:** Inner vector databse that builds accurate editing scope. :confetti_ball:	
@@ -11,14 +12,14 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 
 <!-- omit in toc -->
 ## Table of Contents
-- [Reference](#Reference)
+- [Reference](#reference)
 - [Introduction](#introduction)
 - [Experiments](#experiments)
 - [Prepare Environments](#prepare-environments)
 - [Prepare Datasets](#prepare-datasets)
 - [Quick Start](#quick-start)
-- [Acknowledgments](#Acknowledgments)
-
+- [Important Tips](#important-tips)
+- [Acknowledgments](#acknowledgments)
 ## Reference
 We would appreciate if you could refer to our work as one of your baselines!
 ```
@@ -73,6 +74,21 @@ python run.py +alg=lora +experiment=scotus +model=scotus-bert
 cd melo
 python run.py +alg=lora +experiment=qa +model=t5small
 ```
+## Important Tips
+* [Datasets](https://drive.google.com/file/d/1HDqh4ofYF7B-YkcU3CNlZMYAOJO0XxwX/view?usp=drive_link) for MELO's experiments can be downloaded through GoogleDrive now. Please extract the files and place them under `melo\data`.
+
+* The GPT2-XL model we use is fine-tuned in line with the work [GRACE](https://github.com/Thartvigsen/GRACE/blob/728a52ebcd328ddca0bb1ec975e79625eabfab2a/grace/main.py#L83). Please download the checkpoint with the [Google Drive](https://drive.google.com/drive/folders/1j_DvcUY8goksQVOBt4XqBe7z8fS-0zvI?usp=sharing) link, and place the files under `melo/scr/models--gpt2-xl`
+    
+    
+* Some [logs](https://drive.google.com/drive/folders/1UhlY1W8MUmvsxqIXlRFBfxuTXEQG8FJP?usp=sharing) recording the correct training and inference processes are released for checking hyper-parameters.
+
+* The settings of [torch.optim.lr_scheduler](https://github.com/BruthYU/MELO/blob/51c8322cc06faa2b7665c2d90236f1bd1b8d9575/melo/algs/lora.py#L135) vary on different tasks:
+  ```
+   # T5-Small and T5-Large
+   scheduler = torch.optim.lr_scheduler.StepLR(optimizer,step_size=20,gamma=0.5)
+   # SCOTUS-BERT and GPT2-XL
+   scheduler = torch.optim.lr_scheduler.StepLR(optimizer,step_size=30,gamma=0.5)
+  ```
 
 
 ## Acknowledgments
