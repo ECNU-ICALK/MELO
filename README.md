@@ -77,6 +77,8 @@ cd melo
 python run.py +alg=lora +experiment=qa +model=t5small
 ```
 ## Important Tips
+* [Datasets](https://drive.google.com/file/d/1HDqh4ofYF7B-YkcU3CNlZMYAOJO0XxwX/view?usp=drive_link) for MELO's experiments can be downloaded through GoogleDrive now. Please extract the files and place them under `melo\data`.
+
 * The GPT2-XL model we use is fine-tuned in line with the work [GRACE](https://github.com/Thartvigsen/GRACE/blob/728a52ebcd328ddca0bb1ec975e79625eabfab2a/grace/main.py#L83). Please download the checkpoint with the [Google Drive](https://drive.google.com/drive/folders/1j_DvcUY8goksQVOBt4XqBe7z8fS-0zvI?usp=sharing) link, and place the files under `melo/scr/models--gpt2-xl`
     
     
@@ -84,8 +86,12 @@ python run.py +alg=lora +experiment=qa +model=t5small
 
 * The settings of [torch.optim.lr_scheduler](https://github.com/BruthYU/MELO/blob/51c8322cc06faa2b7665c2d90236f1bd1b8d9575/melo/algs/lora.py#L135) vary on different tasks:
   ```
-  123
+   # T5-Small and T5-Large
+   scheduler = torch.optim.lr_scheduler.StepLR(optimizer,step_size=20,gamma=0.5)
+   # SCOTUS-BERT and GPT2-XL
+   scheduler = torch.optim.lr_scheduler.StepLR(optimizer,step_size=30,gamma=0.5)
   ```
+
 
 ## Acknowledgments
 We would like to thank the following individuals and organizations for their contributions to this project:
