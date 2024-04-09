@@ -5,6 +5,7 @@ This repo contains the source code of our proposed MELO, a plug-in model editing
 <!-- omit in toc -->
 ## Updates
 - **2024/03/10:** Add some Important Tips for deployment 🪂
+- **2023/12/19:** Repo has been transferred to [ECNU-ICALK/MELO](https://github.com/ECNU-ICALK/MELO) (Organization Account) 🔔
 - **2023/12/09:** <strong> Our work has been accepted by AAAI 2024</strong> :fire::fire: 
 - **2023/7/16:** Experiments with multiple LLMs on different editing tasks. :art:
 - **2023/6/24:** Inner vector databse that builds accurate editing scope. :confetti_ball:	
@@ -63,6 +64,7 @@ cd melo
 python run.py +alg=lora +experiment=hallucination +model=gpt2xl
 ```
 
+
 ### Editing BERT on SCOTUS with MELO
 ```
 cd melo
@@ -89,6 +91,8 @@ python run.py +alg=lora +experiment=qa +model=t5small
    # SCOTUS-BERT and GPT2-XL
    scheduler = torch.optim.lr_scheduler.StepLR(optimizer,step_size=30,gamma=0.5)
   ```
+
+
 
 
 ## Acknowledgments

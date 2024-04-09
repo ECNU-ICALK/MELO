@@ -132,7 +132,7 @@ class zsRE_balanced(Dataset):
         shuffle_edit = np.random.choice(n_edits, n_edits, replace=False)
         shuffle_holdout = np.random.choice(len(outer_questions), len(outer_questions), replace=False)
         edit_batches = [edits[i] for i in shuffle_edit]
-        edit_batches_holdout = [edits[i] for i in shuffle_holdout]
+        edit_batches_holdout = [hold_outs[i] for i in shuffle_holdout]
         print(f"Loaded {len(edit_batches)} possible edits and {len(edit_batches_holdout)} holdouts.")
 
         if split == "edit":
